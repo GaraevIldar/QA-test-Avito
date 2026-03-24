@@ -1,0 +1,5 @@
+{
+  "TС-1_GetExistingItem": {
+    "expected_status_code": 200
+  }
+}
