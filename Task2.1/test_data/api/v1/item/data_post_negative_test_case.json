@@ -65,7 +65,7 @@
   "TC-8_EmptyNameField": {
     "payload": {
       "sellerID": 111303,
-      "name": "",
+      "name": " ",
       "price": 100,
       "statistics": {
         "likes": 20,
