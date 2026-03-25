@@ -1,0 +1,6 @@
+{
+  "TC-2_InvalidSellerIdType": {
+    "sellerID": "a",
+    "expected_status_code": 400
+  }
+}

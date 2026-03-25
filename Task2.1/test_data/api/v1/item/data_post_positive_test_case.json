@@ -1,0 +1,28 @@
+{
+  "TC-1_ValidData": {
+    "payload": {
+      "sellerID": 164372,
+      "name": "Объявление",
+      "price": 123,
+      "statistics": {
+        "likes": 11,
+        "viewCount": 11,
+        "contacts": 11
+      }
+    },
+    "expected_status_code": 200
+  },
+  "TC-2_ValidData_Zero": {
+    "payload": {
+      "sellerID": 164372,
+      "name": "Объявление",
+      "price": 0,
+      "statistics": {
+        "likes": 0,
+        "viewCount": 0,
+        "contacts": 0
+      }
+    },
+    "expected_status_code": 200
+  }
+}

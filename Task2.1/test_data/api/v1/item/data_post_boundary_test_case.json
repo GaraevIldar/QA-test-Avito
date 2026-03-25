@@ -1,0 +1,54 @@
+{
+  "TC-10_LowerBoundarySellerId": {
+    "payload": {
+      "sellerID": 111111,
+      "name": "Объявление",
+      "price": 123,
+      "statistics": {
+        "likes": 11,
+        "viewCount": 11,
+        "contacts": 11
+      }
+    },
+    "expected_status_code": 200
+  },
+  "TC-11_UpperBoundarySellerId": {
+    "payload": {
+      "sellerID": 999999,
+      "name": "Объявление",
+      "price": 123,
+      "statistics": {
+        "likes": 11,
+        "viewCount": 11,
+        "contacts": 11
+      }
+    },
+    "expected_status_code": 200
+  },
+  "TC-12_BelowLowerBoundary": {
+    "payload": {
+      "sellerID": 111110,
+      "name": "Объявление",
+      "price": 123,
+      "statistics": {
+        "likes": 11,
+        "viewCount": 11,
+        "contacts": 11
+      }
+    },
+    "expected_status_code": 400
+  },
+  "TC-13_AboveUpperBoundary": {
+    "payload": {
+      "sellerID": 1000000,
+      "name": "Объявление",
+      "price": 123,
+      "statistics": {
+        "likes": 11,
+        "viewCount": 11,
+        "contacts": 11
+      }
+    },
+    "expected_status_code": 400
+  }
+}

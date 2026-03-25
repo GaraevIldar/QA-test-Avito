@@ -1,0 +1,6 @@
+{
+  "TC-2_NonExistentUUID_V2": {
+    "item_id": "4ca87de8-9fd0-40f2-9f3c-76931f43a83c",
+    "expected_status_code": 404
+  }
+}

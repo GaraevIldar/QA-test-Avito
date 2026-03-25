@@ -1,0 +1,91 @@
+{
+  "TC-3_IncorrectDataTypes": {
+    "payload": {
+      "sellerID": 164372,
+      "name": 111,
+      "price": 123,
+      "statistics": {
+        "likes": 11,
+        "viewCount": 11,
+        "contacts": 11 }
+    },
+    "expected_status_code": 400
+  },
+  "TC-4_NegativeNumericValues": {
+    "payload": {
+      "sellerID": 164372,
+      "name": "Объявление",
+      "price": -123,
+      "statistics": {
+        "likes": 11,
+        "viewCount": 11,
+        "contacts": 11
+      }
+    },
+    "expected_status_code": 400
+  },
+  "TC-5_MissingRequiredFields": {
+    "payload": {
+      "sellerID": 164372,
+      "name": "Объявление",
+      "statistics": {
+        "likes": 11,
+        "viewCount": 11,
+        "contacts": 11
+      }
+    },
+    "expected_status_code": 400
+  },
+  "TC-6_NullInRequiredField": {
+    "payload": {
+      "sellerID": null,
+      "name": "Объявление",
+      "price": 123,
+      "statistics": {
+        "likes": 11,
+        "viewCount": 11,
+        "contacts": 11
+      }
+    },
+    "expected_status_code": 400
+  },
+  "TС-7_InValidUUID": {
+    "payload": {
+      "sellerID": "a",
+      "name": "Объявление",
+      "price": 123,
+      "statistics": {
+        "likes": 11,
+        "viewCount": 11,
+        "contacts": 11
+      }
+    },
+    "expected_status_code": 400
+  },
+  "TC-8_EmptyNameField": {
+    "payload": {
+      "sellerID": 111303,
+      "name": "",
+      "price": 100,
+      "statistics": {
+        "likes": 20,
+        "viewCount": 45,
+        "contacts": 5
+      }
+    },
+    "expected_status_code": 400
+  },
+  "TC-9_SpecialCharsInName": {
+    "payload": {
+      "sellerID": 111303,
+      "name": "@&#",
+      "price": 100,
+      "statistics": {
+        "likes": 20,
+        "viewCount": 45,
+        "contacts": 5
+      }
+    },
+    "expected_status_code": 400
+  }
+}

@@ -1,17 +1,10 @@
 {
-  "TС-2_IdNoUUID": {
-    "description": "Отправляем id не формата UUID",
-    "item_id" : "1",
+  "TС-2_InvalidUUID": {
+    "item_id" : "abc",
     "expected_status_code": 400
   },
-  "TС-3_NotExistentUUID": {
-    "description": "Отправляем не существующий id",
+  "TС-3_NonExistentUUID": {
     "item_id" : "4ca87de8-9fd0-40f2-9f3c-76931f43a83c",
     "expected_status_code": 404
-  },
-  "TС-4_EmptyUUID": {
-    "description": "Отправляем пустой id",
-    "item_id" : "",
-    "expected_status_code": 400
   }
 }

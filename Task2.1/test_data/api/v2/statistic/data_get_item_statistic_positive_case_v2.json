@@ -1,0 +1,5 @@
+{
+  "TC-1_GetExistingItemStatisticV2": {
+    "expected_status_code": 200
+  }
+}

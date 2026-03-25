@@ -9,7 +9,7 @@ class ApiClient: # Класс клиент для работы с api
         url = f'{self.base_url}/api/1/item/{id}'
         return requests.get(url, headers=self.headers)
 
-    def create_item_v1(self, item: dict): # Функция для создания объявления(POST)
+    def create_item_v1(self, item: dict):
         url = f'{self.base_url}/api/1/item'
         return requests.post(url, json=item, headers=self.headers)
 

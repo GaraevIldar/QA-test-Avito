@@ -4,7 +4,7 @@ from utilities.data_provider import DataProvider
 positive_data_provider = DataProvider("api\\v1\\item\\","data_get_positive_test_case.json")
 negative_data_provider = DataProvider("api\\v1\\item\\","data_get_negative_test_case.json")
 
-def positive_test_get_item(api_client, created_item): # Позитивный сценарий для получения объявления по id
+def test_get_item_positive(api_client, created_item): # Позитивный тест для получения объявления по id
 
     created_id = created_item["id"]
 
@@ -14,20 +14,17 @@ def positive_test_get_item(api_client, created_item): # Позитивный с�
 
     item = response.json()[0]
 
-import pytest
-
-
 @pytest.mark.parametrize(
     "case",
     negative_data_provider.get_all_test_cases(),
     ids=negative_data_provider.get_test_case_ids()
 )
-def test_get_item_with_invalid_data(api_client, case): # Негативные сценарии для получения объявления по id
+def test_get_item_with_invalid_data(api_client, case): # Негативные тесты для получения объявления по id
 
     item_id = case["item_id"]
     expected_status = case["expected_status_code"]
 
-    response = api_client.get_item_by_id(item_id)
+    response = api_client.get_item_by_id_v1(item_id)
 
     # проверка статус-кода
     assert response.status_code == expected_status
@@ -36,8 +33,8 @@ def test_get_item_with_invalid_data(api_client, case): # Негативные с
     if "application/json" in response.headers.get("Content-Type", ""):
         body = response.json()
 
-        assert isinstance(body, dict) # Ответ не является JSON-объектом
+        assert isinstance(body, dict), "Ответ не является JSON-объектом"
 
-        assert any(key in body for key in ["status", "result", "message"]) # Ответ не содержит ожидаемых полей
+        assert any(key in body for key in ["status", "result", "message"]) , "Ответ не содержит ожидаемых полей"
 
 

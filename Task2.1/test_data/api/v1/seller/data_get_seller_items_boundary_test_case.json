@@ -1,0 +1,18 @@
+{
+  "TC-3_LowerBoundarySellerId": {
+    "sellerID": 111111,
+    "expected_status_code": 200
+  },
+  "TC-4_UpperBoundarySellerId": {
+    "sellerID": 999999,
+    "expected_status_code": 200
+  },
+  "TC-5_BelowLowerBoundary": {
+    "sellerID": 111110,
+    "expected_status_code": 400
+  },
+  "TC-6_AboveUpperBoundary": {
+    "sellerID": 1000000,
+    "expected_status_code": 400
+  }
+}
